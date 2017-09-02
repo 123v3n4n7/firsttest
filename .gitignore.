@@ -1,6 +1,0 @@
-*.pyc
-_picache_
-myenv
-db.sqlite3
-.DS_Store
-
