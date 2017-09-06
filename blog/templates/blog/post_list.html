@@ -4,10 +4,15 @@
 	</head>
 	<body>
 		<div>		
-			<h1>Здорова, пидор!</h1>
+			{%for post in posts%}
+				<div>
+					<p>published:{{post.published_date}}</p>
+					<h1>{{post.title}}</h1>
+					<h4>{{post.text|linebreaksbr}}
+			{%endfor%}
 		</div>
 		<div>
-			<h6><a href = "">Пошёл ты нахуй</a></h6>
+			<h2><a href = "">ДОБРО ПОЖАЛОВАТЬ</a></h2>
 		</div>
 	</body>
 </html>
