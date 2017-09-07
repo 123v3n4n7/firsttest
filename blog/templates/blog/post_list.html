@@ -1,18 +1,10 @@
-<html>
-	<head>
-		<title>sitetest</title>
-	</head>
-	<body>
-		<div>		
-			{%for post in posts%}
-				<div>
-					<p>published:{{post.published_date}}</p>
-					<h1>{{post.title}}</h1>
-					<h4>{{post.text|linebreaksbr}}
-			{%endfor%}
-		</div>
-		<div>
-			<h2><a href = "">ДОБРО ПОЖАЛОВАТЬ</a></h2>
-		</div>
-	</body>
-</html>
+{% extends 'blog/base.html' %}	
+{% block content %}
+{%for post in posts%}
+	<div>
+		<div class ="date"><p>{{post.published_date}}</p></div>
+		<h1><a href="{% url 'post_detail' pk = post.pk %}">{{post.title}}</a></h1>
+		<h4>{{post.text|linebreaksbr}}
+	</div>
+{%endfor%}
+{% endblock content%}
